@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Music e-Learning System</title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!--	<script type="text/javascript" src="https://skyway.io/dist/0.3/peer.js"></script>				-->
+	<script type="text/javascript" src="bower_components/peerjs-master/dist/peer_c00.js"></script>
+<!--	<script type="text/javascript" src="//cdn.WebRTC-Experiment.com/getScreenId.js"></script>		-->
+	<script type="text/javascript" src="bower_components/screen-capture/getScreenId.js"></script>	
+	<script src="bower_components/webrtc-adapter/adapter.js"></script>
+	<script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+ 	<link rel="import" href="bower_components/x-webmidi/x-webmidirequestaccess.html">
+ 	<x-webmidirequestaccess input output></x-webmidirequestaccess>
+<!--	<link rel="import" href="bower_components/polymer/polymer.html">		-->
+
+	<style type="text/css">
+		table {
+			background-color: #D0D0D0;
+		}
+		h4 {
+			background-color: navy;
+			color: white;
+			text-align: center;
+		}							
+		p#center {
+			font-weight: bold;
+			color: black;
+			text-align: center;
+
+			width: 300px;
+			height: 50px;
+			overflow: hidden;
+		}							
+		div {
+			font-size: small;
+			background: white;
+			width: 300px;
+			height: 400px;
+			overflow-y: scroll;
+		}
+		button {
+			color: white;
+			font-size: small;
+			background: #505050;
+		}							
+		input {
+			font-size: small;
+		}							
+	</style>
+</head>
+<body>
+	<table border="3">
+		<caption><b>Music e-Learning System</b></caption>
+		<tr>
+			<td rowspan=4>
+				<h4>Peer Screen & Audio</h4>
+				<video id="peer-screen" Width="1280" height="720" controls autoplay></video>
+        		</td><td>
+				<h4>Peer Camera</h4>
+				<video id="peer-video" Width="300px" height="180px" controls autoplay></video>
+			</td><td>
+				<h4>My Camera</h4>
+				<video id="my-video"  Width="300px" height="180px" controls autoplay></video>
+			</td>
+		</tr><tr>
+ 			<td rowspan="3">
+				<h4>Chat & File transfer</h4>
+				<p><input type="file" placeholder="File Name" id="file"><br>
+				<input type="text" placeholder="Chat Message" id="message"><button id="send">Send</button></p>
+				<div id="messages"></div>
+			</td>
+			<td>
+				<h4>Connection</h4>
+				<p>MyID : <span id="my-id">-</span><br>
+        			PeerID : <span id="peer-id">-</span><br>
+        			<input type="text" placeholder="PeerID" id="peer-id-input">
+        			<button id="connect">Connect</button>
+        			<button id="close">Close</button></p>
+ 			</td>
+		</tr><tr>
+ 			<td>
+<!--       			My Audio<br><audio id="my-audio" controls muted autoplay></audio><hr>		-->
+        			<p id="center">Camera in<br><select id="videoSource"></select></p>
+				<p id="center">Mic in<br><select id="voiceSource"></select></p>
+				<p id="center">Audio in<br><select id="audioSource"></select></p>
+			</td>
+		</tr><tr>
+ 			<td>				
+				<p id="center">Midi in<br><x-webmidiinput id="midi-input" autoreselect></x-webmidiinput></p>
+				<p id="center">Midi out<br><x-webmidioutput id="midi-output" autoreselect></x-webmidioutput></p>
+			</td>
+		</tr>
+	</table>
+	<script type="text/javascript" src="MLS_00.js"></script>
+<footer><small>&copy; 2015 YUICHI NOHARA</small></footer>
+</body>
+</html>
