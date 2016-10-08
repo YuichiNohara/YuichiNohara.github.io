@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Music e-Learning System</title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!--	<script type="text/javascript" src="bower_components/jquery-1.11.3.min.js"></script>
+<!--	<script type="text/javascript" src="https://skyway.io/dist/0.3/peer.js"></script>	-->
+	<script type="text/javascript" src="bower_components/peerjs/dist/peer_c00.js"></script>
+	<script type="text/javascript" src="https://skyway.io/dist/screenshare.js"></script>
+<!--	<script type="text/javascript" src="bower_components/SkyWay-ScreenShare/dist/screenshare.js"></script>	-->
+	<script type="text/javascript" src="https://skyway.io/dist/adapter.js"></script>
+<!--	<script type="text/javascript" src="bower_components/webrtc-adapter/adapter.js"></script>	-->
+	<script type="text/javascript" src="bower_components/webcomponentsjs/webcomponents.js"></script>
+ 	<link rel="import" href="bower_components/x-webmidi/x-webmidirequestaccess.html">
+ 	<x-webmidirequestaccess input output></x-webmidirequestaccess>
+<!--	<link rel="import" href="bower_components/polymer/polymer.html">	-->
+
+	<style type="text/css">
+		.box1 {
+			width: 960px; height: 620px;
+			position: fixed ; top: 30px; left: 4px;
+			background-color: #D0D0D0;
+			outline: 2px solid black;
+		}	
+		.box2 {
+			width: 320px; height: 620px;
+			position: fixed ; top: 30px; left: 966px;
+			background-color: #D0D0D0;
+			outline: 2px solid black;
+		}	
+		.box3 {
+			width: 320px; height: 620px;
+			position: fixed ; top: 30px; left: 1288px;
+			background-color: #D0D0D0;
+			outline: 2px solid black;
+		}
+		h4 {
+			background-color: navy;
+			color: white;
+			text-align: center;
+		}							
+		p#select {
+			color: black;
+			overflow: hidden;
+		}							
+		.msg {
+			font-size: small;
+			background: white;
+			width: 320px;
+			height: 180px;
+			overflow-y: scroll;
+		}
+		button {
+			color: white;
+			font-size: small;
+			background: red;
+		}							
+		button#close {
+			background: blue;
+		}
+		button#list {
+			background: green;
+		}							
+		button#log {
+			background: green;
+		}							
+		button#stop-record {
+			background: blue;
+		}
+		input {
+			font-size: small;
+		}							
+	</style>
+</head>
+<body>
+	<b>Music e-Learning System</b>
+		<div class="box1">
+			<h4>Peer Screen</h4>
+			<video id="peer-screen" Width="960" height="540" controls autoplay></video>
+        	</div>
+        	<div class="box2">
+			<h4>Peer Camera</h4>
+			<video id="peer-video" Width="320px" height="240px" controls autoplay></video>
+			<h4>Chat & File transfer</h4>
+			<input type="file" placeholder="File Name" id="file"><br>
+			<input type="text" placeholder="Chat Message" id="message"><button id="send">Send</button>
+			<div class="msg" id="messages"></div>
+		</div>
+		<div class="box3">
+			<h4>Connection</h4>
+			My ID : <span id="my-id">-</span><br>
+        		Peer ID : <span id="peer-id">-</span><br>
+        		<input type="text" placeholder="PeerID" id="peer-id-input">
+        		<button id="connect">Connect</button>
+        		<button id="close">Close</button>
+        		<button id="list">L</button><br>
+			<h4>Log Capture</h4>
+			<button id="log">Message Log</button>
+			<button id="start-record">Start Record</button>
+			<button id="stop-record">Stop Record</button><br>
+			<h4>Device Selection</h4>
+        		<p id="select">Camera in - <select id="videoSource"></select><br>
+			Mic in ------- <select id="voiceSource"></select><br>
+			Audio in ---- <select id="audioSource"></select><hr>
+			Mic out ----- <select id="voiceOutSource"></select><br>
+			Audio out -- <select id="audioOutSource"></select></p><hr>
+	      		<audio id="play-audio" autoplay></audio>
+			<p id="select">Midi in - <x-webmidiinput id="midi-input" autoreselect></x-webmidiinput><br>
+			Midi out <x-webmidioutput id="midi-output" autoreselect></x-webmidioutput></p><hr>
+			<footer><small>&copy; 2016 YUICHI NOHARA</small></footer>
+		</div>
+	<script type="text/javascript" src="MLS_02.js"></script>
+</body>
+</html>
