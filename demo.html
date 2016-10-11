@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>講師画面のデモ</title>
+	<style type="text/css">		
+	</style>
+</head>
+<body>
+	<h1>講師画面のデモ映像</h1>
+	<p>　学習者のプレゼンテーションを映像化し, 講師画面を見ていただけるようにしました.<br />
+	　学習者PCでは, PC画面にDAW画面を表示し再生します (プレゼンテーションのイメージ). <br />
+	　本システムを使い指導者PCに送信し, 指導者PCで録画する (Media Recording API を利用).<br />
+	　つまり, 本システムを使用しても, <b>"このレベルのオーディオのクオリティは担保される"</b> ということです.<br />
+	　フルスクリーンするとPC上でイメージし易いかと思います.</p>
+	<h3>講師側のデモ映像 (Jazz版)</h3>
+	<video src="movie/jazz.webm" controls="controls"></video>
+	<h3>参考: 学習者側のオーディオ・クオリティ (jazz版)</h3>
+	<audio src="movie/jazz.wav" controls="controls"></audio>
+	<hr>	
+	<h3>講師側のデモ映像 (Bosa Nova版)</h3>
+	<video src="movie/BosaNova.webm" controls="controls"></video>
+	<h3>参考: 学習者側のオーディオ・クオリティ (Bosa Nova版)</h3>
+	<audio src="movie/BosaNova.wav" controls="controls"></audio>
+	<hr>
+	<p>　上記で映像が見ることができない場合には, 以下で映像を見てください. <br />
+	　MPEG4/H.264形式に変換しました (オリジナルは, HTML5 Video (WebM) 形式).</p>
+	<h3>講師側のデモ映像 (Jazz版, MPEG4)</h3>
+	<video src="movie/jazz.mp4" controls="controls"></video>
+	<h3>講師側のデモ映像 (Bosa Nova版, MPEG4)</h3>
+	<video src="movie/BosaNova.mp4" controls="controls"></video>
+	<hr>
+	<h3>デモ映像制作環境</h3>
+	<p>　指導者PC　CPU: Core-i3 3.06GHz, メモリ: 12GB, OS: MacOSX 10.5<br />
+	　学習者PC　CPU: Core-i3 2,66GHz, メモリ: 6GB, OS: Windows7 Pro 64bit, DAW: SONAR X3<br />
+	　ネットワーク: 1GbpsのLAN環境.<br />
+	　Webサーバ: 指導者PCに機能をが持つ.<br />
+	　シグナリング/ICEサーバ: SkyWayを利用.<br />
+	<hr>
+	<footer><small>&copy; 2016 YUICHI NOHARA</small></footer>
+</body>
+</html>
